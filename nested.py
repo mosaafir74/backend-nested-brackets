@@ -6,7 +6,7 @@ Module docstring: One line description of what your program does.
 Part 1: Open and read the file of test strings
 Part 2: Call the `is_nested` function with each test string
 """
-__author__ = "mosaafir74"
+__author__ = "mosaafir74 with instructor help"
 
 import sys
 
@@ -37,7 +37,7 @@ def is_nested(s):
             matching_opener = openers[closers.index(n)]
             if len(stack) == 0 or stack.pop() != matching_opener:
                 return "NO "
-    if len(stack) !=0:
+    if stack:  # tests if stack is empty or not
         return "NO "
     return "Yes "
 
@@ -45,14 +45,14 @@ def is_nested(s):
     # for char in s:
     #   print(char, end=' ', flush=True)
 
-    while s:
-        token = s[0]
-        if s[:2] == '(*':
-            token = '(*'
-        if s[:2] == '*)':
-            token = '*)'
-        #print(token, sep=' ', flush=True)
-        s = s[len(token):]
+    # while s:
+    #     token = s[0]
+    #     if s[:2] == '(*':
+    #         token = '(*'
+    #     if s[:2] == '*)':
+    #         token = '*)'
+    #     #print(token, sep=' ', flush=True)
+    #     s = s[len(token):]
 
 def main():
     
